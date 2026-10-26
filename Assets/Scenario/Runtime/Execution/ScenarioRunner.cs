@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,10 +15,13 @@ namespace ScenarioKit
         [SerializeField] ScenarioDefinition scenario;
         [Tooltip("Режим, который запускается сразу при старте сцены. Пусто — режим выбирается в меню.")]
         [SerializeField] ModeProfile autoStartMode;
+        [Tooltip("Куда писать журнал. Можно выбрать несколько логгеров или ни одного: журнал в памяти ведётся всегда.")]
+        [SerializeField] List<LoggerAsset> loggers = new List<LoggerAsset>();
 
         // Survives the scene reload used for a repeated run.
         static ModeProfile pendingMode;
 
+        readonly List<ILogWriter> writers = new List<ILogWriter>();
         float startTime;
 
         public ScenarioDefinition Scenario => scenario;
@@ -37,7 +41,11 @@ namespace ScenarioKit
                 Begin(mode);
         }
 
-        void OnDestroy() => Session?.Abort();
+        void OnDestroy()
+        {
+            Session?.Abort();
+            CloseWriters();
+        }
 
         /// <summary>Starts the mode; if a session already ran in this scene, reloads the scene first.</summary>
         public void Play(ModeProfile mode)
@@ -62,10 +70,44 @@ namespace ScenarioKit
 
             startTime = Time.time;
             Session = new ScenarioSession(scenario, mode, WorldState.Shared, () => Time.time - startTime);
+            OpenWriters($"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}_{mode.name}");
+            Session.Finished += CloseWriters;
             SessionCreated?.Invoke(Session);
             Session.Start();
         }
 
         void OnAction(ActionEvent action) => Session?.HandleAction(action);
+
+        void OpenWriters(string sessionName)
+        {
+            foreach (var logger in loggers)
+            {
+                if (logger == null)
+                    continue;
+                try
+                {
+                    writers.Add(logger.Open(sessionName));
+                }
+                catch (Exception e)
+                {
+                    // A broken output must not stop the training session.
+                    Debug.LogError($"[Scenario] Логгер «{logger.name}» не открылся: {e.Message}", logger);
+                }
+            }
+            Session.Journal.Added += WriteToLoggers;
+        }
+
+        void WriteToLoggers(LogRecord record)
+        {
+            foreach (var writer in writers)
+                writer.Write(record);
+        }
+
+        void CloseWriters()
+        {
+            foreach (var writer in writers)
+                writer.Dispose();
+            writers.Clear();
+        }
     }
 }
