@@ -1,0 +1,8 @@
+{
+    "name": "Scenario.Runtime",
+    "rootNamespace": "ScenarioKit",
+    "references": [
+        "UnityEngine.UI"
+    ],
+    "autoReferenced": true
+}
