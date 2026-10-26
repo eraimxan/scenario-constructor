@@ -66,7 +66,12 @@ namespace ScenarioKit
             messagesText.text = "";
         }
 
-        void OnDestroy() => runner.SessionCreated -= Attach;
+        void OnDestroy()
+        {
+            runner.SessionCreated -= Attach;
+            // The runner aborts the session after the HUD may already be destroyed (scene reload on replay).
+            Detach();
+        }
 
         void BuildMenu()
         {
@@ -86,6 +91,7 @@ namespace ScenarioKit
 
         void Attach(ScenarioSession newSession)
         {
+            Detach();
             session = newSession;
             session.Changed += Refresh;
             session.Message += AddMessage;
@@ -94,6 +100,15 @@ namespace ScenarioKit
             closeMenuButton.gameObject.SetActive(true);
             messages.Clear();
             messagesText.text = "";
+        }
+
+        void Detach()
+        {
+            if (session == null)
+                return;
+            session.Changed -= Refresh;
+            session.Message -= AddMessage;
+            session.Finished -= ShowResults;
         }
 
         void Refresh()
