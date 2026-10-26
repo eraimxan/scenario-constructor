@@ -128,7 +128,8 @@ namespace ScenarioKit.Demo.Editor
             if (element == null)
                 element = go.AddComponent<LayoutElement>();
             element.preferredHeight = preferredHeight;
-            element.flexibleHeight = flexibleHeight;
+            // Explicit 0: otherwise a layout group on the same object makes the element stretch.
+            element.flexibleHeight = Mathf.Max(0, flexibleHeight);
         }
     }
 }

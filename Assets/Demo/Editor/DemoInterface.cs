@@ -8,8 +8,9 @@ namespace ScenarioKit.Demo.Editor
     /// <summary>Builds the canvas: task panel, control panel (action sources), menu, result and journal overlays.</summary>
     static class DemoInterface
     {
-        static readonly Color PanelColor = new Color(0.1f, 0.11f, 0.13f, 0.95f);
-        static readonly Color OverlayColor = new Color(0.12f, 0.13f, 0.16f, 0.98f);
+        // Opaque: the side panels cover screen areas the camera does not clear (see camera rect in DemoWorld).
+        static readonly Color PanelColor = new Color(0.1f, 0.11f, 0.13f, 1f);
+        static readonly Color OverlayColor = new Color(0.12f, 0.13f, 0.16f, 1f);
 
         public static void Build(DemoAssets assets, DemoWorld world, ScenarioRunner runner)
         {
@@ -43,6 +44,7 @@ namespace ScenarioKit.Demo.Editor
             row.spacing = 10;
             row.childControlWidth = true;
             row.childControlHeight = true;
+            row.childForceExpandHeight = false;
             DemoUi.Size(bar, height, -1);
             return bar.transform;
         }

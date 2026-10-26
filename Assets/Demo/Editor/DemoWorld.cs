@@ -66,7 +66,7 @@ namespace ScenarioKit.Demo.Editor
 
             var plate = Box("Plate", zone.transform, new Vector3(0, 0.01f, 0), new Vector3(size.x, 0.02f, size.y), Mat("Zone " + action, color));
             Object.DestroyImmediate(plate.GetComponent<Collider>());
-            Label(zone.transform, title, new Vector3(0, 0.05f, 0));
+            Label(zone.transform, title, new Vector3(0, 0.05f, 0), new Color(0.08f, 0.08f, 0.1f));
         }
 
         void BuildObjects()
@@ -152,7 +152,9 @@ namespace ScenarioKit.Demo.Editor
             return box;
         }
 
-        void Label(Transform parent, string text, Vector3 localPosition)
+        void Label(Transform parent, string text, Vector3 localPosition) => Label(parent, text, localPosition, Color.white);
+
+        void Label(Transform parent, string text, Vector3 localPosition, Color color)
         {
             var label = new GameObject("Label");
             label.transform.SetParent(parent);
@@ -165,7 +167,7 @@ namespace ScenarioKit.Demo.Editor
             mesh.characterSize = 0.08f;
             mesh.anchor = TextAnchor.MiddleCenter;
             mesh.alignment = TextAlignment.Center;
-            mesh.color = Color.white;
+            mesh.color = color;
             label.GetComponent<MeshRenderer>().sharedMaterial = font.material;
         }
 
