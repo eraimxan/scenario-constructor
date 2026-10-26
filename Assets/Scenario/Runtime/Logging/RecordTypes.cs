@@ -9,6 +9,8 @@ namespace ScenarioKit
         public const string SessionEnd = "session.end";
         /// <summary>One per step of the plan, written at start. data: title, group, groupIndex.</summary>
         public const string StepRegistered = "step.registered";
+        /// <summary>A problem found when the plan was built (e.g. a duplicated step). message: text.</summary>
+        public const string SessionWarning = "session.warning";
         /// <summary>data: name, index.</summary>
         public const string GroupStart = "group.start";
         /// <summary>data: name, violations; message: why it ended early (if it did).</summary>
