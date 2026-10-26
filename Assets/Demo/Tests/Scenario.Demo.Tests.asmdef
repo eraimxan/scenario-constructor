@@ -1,0 +1,19 @@
+{
+    "name": "Scenario.Demo.Tests",
+    "rootNamespace": "ScenarioKit.Demo.Tests",
+    "references": [
+        "Scenario.Runtime",
+        "Scenario.Demo",
+        "UnityEngine.UI",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ]
+}
