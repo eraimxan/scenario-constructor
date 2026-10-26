@@ -1,0 +1,11 @@
+{
+    "name": "Scenario.Editor",
+    "rootNamespace": "ScenarioKit.Editor",
+    "references": [
+        "Scenario.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": true
+}
