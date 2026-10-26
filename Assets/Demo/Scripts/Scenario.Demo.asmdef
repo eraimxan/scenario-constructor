@@ -1,0 +1,8 @@
+{
+    "name": "Scenario.Demo",
+    "rootNamespace": "ScenarioKit.Demo",
+    "references": [
+        "Scenario.Runtime"
+    ],
+    "autoReferenced": true
+}
