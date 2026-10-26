@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54ff15034413e149ac3211fa53090f5, type: 3}
+  m_Name: S05_RouteBC
+  m_EditorClassIdentifier: Scenario.Runtime::ScenarioKit.ActionSequenceStep
+  id: S05
+  title: "\u041E\u0431\u0445\u043E\u0434 B \u2192 C"
+  instruction: "\u041F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u043C\u0430\u0440\u0448\u0440\u0443\u0442: \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u0441\u0438\u043D\u044F\u044F \u0437\u043E\u043D\u0430 B, \u0437\u0430\u0442\u0435\u043C \u0437\u0435\u043B\u0451\u043D\u0430\u044F \u0437\u043E\u043D\u0430 C."
+  sequence:
+  - {fileID: 11400000, guid: 77c91bffd3a7aae49bbd1769bdb457df, type: 2}
+  - {fileID: 11400000, guid: 018e0a0fc10dca44483aed559661df22, type: 2}
+  strictOrder: 1
+  requirements: []
+  forbidden: []

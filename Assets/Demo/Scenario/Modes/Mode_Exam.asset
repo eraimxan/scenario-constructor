@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dac69644c2c4a4c9a644faffa1e05b, type: 3}
+  m_Name: Mode_Exam
+  m_EditorClassIdentifier: Scenario.Runtime::ScenarioKit.ModeProfile
+  displayName: "\u042D\u043A\u0437\u0430\u043C\u0435\u043D"
+  description: "\u0422\u0440\u0438 \u0433\u0440\u0443\u043F\u043F\u044B; \u043D\u0430\u0440\u0443\u0448\u0435\u043D\u0438\u0435 \u2014 Failed; 2 \u043D\u0430\u0440\u0443\u0448\u0435\u043D\u0438\u044F \u0432 \u0433\u0440\u0443\u043F\u043F\u0435 \u2014 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0448\u0430\u0433\u0438 \u0433\u0440\u0443\u043F\u043F\u044B Skipped."
+  rules: {fileID: 11400000, guid: 02350c71c30542e44b3f9bc2cb96c401, type: 2}
+  outOfTurn: 0
+  defaultAnalyzer: {fileID: 11400000, guid: 784f5fd83ef89c041b978912ac374a0c, type: 2}
+  groups:
+  - name: "\u0413\u0440\u0443\u043F\u043F\u0430 1: \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0430"
+    start: 0
+    stages:
+    - note: 
+      activation: 0
+      steps:
+      - {fileID: 11400000, guid: 0f45df70494c64744aee0f2bcadb63ce, type: 2}
+      - {fileID: 11400000, guid: e6e9c6e3ae333f94b9754cb83f5a9e9e, type: 2}
+      - {fileID: 11400000, guid: 3e6046d9c35c2ee4a84cd771a70d51bd, type: 2}
+      - {fileID: 11400000, guid: edcf8293af6f18040a0c78464c5d0a96, type: 2}
+  - name: "\u0413\u0440\u0443\u043F\u043F\u0430 2: \u0437\u0430\u043F\u0443\u0441\u043A"
+    start: 0
+    stages:
+    - note: 
+      activation: 1
+      steps:
+      - {fileID: 11400000, guid: 72b76082a84d39c4987a471b713cb540, type: 2}
+      - {fileID: 11400000, guid: 87fa199ffd9097c45a6fac1715b1caf3, type: 2}
+      - {fileID: 11400000, guid: 20c64f35dfe3d294b9703185ff803f02, type: 2}
+      - {fileID: 11400000, guid: 6989c4dd4e821cb4eae021872e0d67de, type: 2}
+  - name: "\u0413\u0440\u0443\u043F\u043F\u0430 3: \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435"
+    start: 0
+    stages:
+    - note: 
+      activation: 0
+      steps:
+      - {fileID: 11400000, guid: 5a3b7972f73a300499728b54994e13dd, type: 2}
+      - {fileID: 11400000, guid: a89fdaea5751a2d48ad7584d0ba36313, type: 2}
+    - note: 
+      activation: 0
+      steps:
+      - {fileID: 11400000, guid: fc5aabfc4f481a744abc784fdabc20d1, type: 2}
+      - {fileID: 11400000, guid: 01ecd448ec8ae3446acf70bc8c6b6cf2, type: 2}

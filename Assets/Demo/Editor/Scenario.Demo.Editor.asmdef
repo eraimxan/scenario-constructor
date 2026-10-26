@@ -1,0 +1,13 @@
+{
+    "name": "Scenario.Demo.Editor",
+    "rootNamespace": "ScenarioKit.Demo.Editor",
+    "references": [
+        "Scenario.Runtime",
+        "Scenario.Demo",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": false
+}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54ff15034413e149ac3211fa53090f5, type: 3}
+  m_Name: S03_InspectA
+  m_EditorClassIdentifier: Scenario.Runtime::ScenarioKit.ActionSequenceStep
+  id: S03
+  title: "\u041E\u0441\u043C\u043E\u0442\u0440 \u0437\u043E\u043D\u044B A"
+  instruction: "\u0417\u0430\u0439\u0434\u0438\u0442\u0435 \u0432 \u0436\u0451\u043B\u0442\u0443\u044E \u0437\u043E\u043D\u0443 A. \u041D\u0435 \u0437\u0430\u0445\u043E\u0434\u0438\u0442\u0435 \u0432 \u043A\u0440\u0430\u0441\u043D\u0443\u044E \u043E\u043F\u0430\u0441\u043D\u0443\u044E \u0437\u043E\u043D\u0443."
+  sequence:
+  - {fileID: 11400000, guid: d9fcf2dc841630b47ba41da1614518e9, type: 2}
+  strictOrder: 1
+  requirements: []
+  forbidden:
+  - action: {fileID: 11400000, guid: e8c48f1215f424249ae8f5a1b34fb55c, type: 2}
+    violationMessage: "\u0432\u0445\u043E\u0434 \u0432 \u043E\u043F\u0430\u0441\u043D\u0443\u044E \u0437\u043E\u043D\u0443"
